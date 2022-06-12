@@ -39,10 +39,5 @@
 4. 订单管理接口文档：http://139.198.34.216:8206/swagger-ui.html
 5. 用户登录接口文档：http://139.198.34.216:8230/doc.html
 
-## 项目地址
 
-1. 完整项目地址：https://gitee.com/xxpromise/syt-admin
-2. 基础项目地址：https://gitee.com/xxpromise/syt-admin-base
-3. 项目文档地址：https://gitee.com/xxpromise/syt-admin-docs
-4. 项目文档在线访问地址：http://xxpromise.gitee.io/syt-admin-docs
-5. 前台尚医通挂号平台在线访问地址：http://syt.atguigu.cn/
+前台尚医通挂号平台在线访问地址：http://syt.atguigu.cn/
