@@ -5,6 +5,7 @@ export interface GetInfoResponse {
   buttons: string[];
 }
 
-export interface LoginResponse {
-  token: string;
-}
+// export interface LoginResponse {
+//   token: string;
+// }
+export type LoginResponse = string
