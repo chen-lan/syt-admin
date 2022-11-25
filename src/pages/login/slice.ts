@@ -78,7 +78,7 @@ export const userSlice = createSlice({
       // })
       // 代表异步action执行成功
       .addCase(loginAsync.fulfilled, (state, action) => {
-        const  token  = action.payload;
+        const token = action.payload;
         // 将数据存储到redux中
         state.token = token;
         // // 将数据持久化存储
