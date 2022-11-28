@@ -1,7 +1,7 @@
 // src/routes/index.tsx
 import React, { lazy, Suspense, FC } from "react";
 import { useRoutes } from "react-router-dom";
-import { HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined,ShopOutlined } from "@ant-design/icons";
 import type { XRoutes } from "./types";
 
 import {
@@ -15,6 +15,8 @@ import Redirect from "@comps/Redirect";
 const Login = lazy(() => import("@pages/login"));
 const Dashboard = lazy(() => import("@pages/dashboard"));
 const NotFound = lazy(() => import("@pages/404"));
+const HospitalList = lazy(() => import("@pages/hospital/hospitalList"));
+const HospitalSet = lazy(() => import("@pages/hospital/hospitalSet"));
 
 const load = (Comp: FC) => {
   return (
@@ -28,6 +30,7 @@ const load = (Comp: FC) => {
   );
 };
 
+// 路由表routes，数组
 const routes: XRoutes = [
   {
     path: "/",
@@ -47,6 +50,22 @@ const routes: XRoutes = [
         path: "/syt/dashboard",
         meta: { icon: <HomeOutlined />, title: "首页" },
         element: load(Dashboard),
+      },
+      {
+        path: "/syt/hospital",
+        meta: { icon: <ShopOutlined />, title: "医院管理" },
+        children: [
+          {
+            path: "/syt/hospital/hospitalSet",
+            meta: { title: "医院设置" },
+            element: load(HospitalSet),
+          },
+          {
+            path: "/syt/hospital/hospitalList",
+            meta: { title: "医院列表" },
+            element: load(HospitalList),
+          },
+        ]
       },
     ],
   },

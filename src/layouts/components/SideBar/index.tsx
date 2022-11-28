@@ -33,6 +33,7 @@ interface MenuInfo {
 }
 
 function SideBar() {
+  // 设置当前收起状态
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys, setOpenKeys] = useState<string[]>([]);
   const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
@@ -41,6 +42,7 @@ function SideBar() {
     setCollapsed(collapsed);
   };
 
+  // useLocation 用来获取 location 对象,从而拿到 state 数据
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -53,8 +55,10 @@ function SideBar() {
     setSelectedKeys([selectedKeys]);
   }, [pathname]);
 
+  // 查找侧边栏路由
   const routes = findSideBarRoutes() as XRoutes;
 
+  // 根据路由表，遍历菜单每一项
   const menuItems: MenuItem[] = routes.map((route) => {
     return getItem(
       route.meta?.title,
@@ -62,6 +66,7 @@ function SideBar() {
       route.meta?.icon,
       route.children
         ?.map((item) => {
+          // 菜单子节点隐藏，则返回空
           if (item.hidden) return null;
           return getItem(item.meta?.title, item.path as string, item.meta?.icon);
         })

@@ -6,6 +6,7 @@ import enUS from "antd/lib/locale/en_US";
 import { useAppSelector } from "@/app/hooks";
 import { selectLang } from "@/app/slice";
 
+// 引入渲染路由
 import { RenderRoutes } from "./routes";
 
 function App() {
