@@ -1,12 +1,14 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { message } from "antd";
 
+// 定义数据响应回来格式
 interface ResponseData<T> {
   code: number;
   data: T;
   message: string;
 }
 
+// 创建request实例对象
 const request = axios.create({
   baseURL: process.env.REACT_APP_API,
   timeout: 10000,
