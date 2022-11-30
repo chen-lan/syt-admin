@@ -15,8 +15,10 @@ import Redirect from "@comps/Redirect";
 const Login = lazy(() => import("@pages/login"));
 const Dashboard = lazy(() => import("@pages/dashboard"));
 const NotFound = lazy(() => import("@pages/404"));
+const HospitalSet = lazy(() => import("@/pages/hospital/hospitalSet"));
+const HospitalSetAddOrUpdate = lazy(() => import("@/pages/hospital/hospitalSet/components/hospitalSetAddOrUpdate"));
 const HospitalList = lazy(() => import("@pages/hospital/hospitalList"));
-const HospitalSet = lazy(() => import("@pages/hospital/hospitalSet"));
+const ShowHospital = lazy(() => import("@pages/hospital/hospitalList/components/ShowHospital"));
 
 const load = (Comp: FC) => {
   return (
@@ -61,9 +63,27 @@ const routes: XRoutes = [
             element: load(HospitalSet),
           },
           {
+            path: "/syt/hospital/hospitalSet/addHospital",
+            meta: { title: "添加医院" },
+            hidden: true,
+            element: load(HospitalSetAddOrUpdate),
+          },
+          {
+            path: "/syt/hospital/hospitalSet/updateHospital/:id",
+            meta: { title: "修改医院" },
+            hidden: true,
+            element: load(HospitalSetAddOrUpdate),
+          },
+          {
             path: "/syt/hospital/hospitalList",
             meta: { title: "医院列表" },
             element: load(HospitalList),
+          },
+          {
+            path: "/syt/hospital/hospitalList/showHospital",
+            meta: { title: "查看医院" },
+            hidden: true,
+            element: load(ShowHospital),
           },
         ]
       },

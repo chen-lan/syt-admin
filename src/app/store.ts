@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import userSlice from "@/pages/login/slice";
 import appSlice from "./slice";
+import hospitalReducer from "@/pages/hospital/hospitalSet/slice";
 
 export const store = configureStore({
   reducer: {
     user: userSlice,
     app: appSlice,
+    hospitalSearch: hospitalReducer,
   },
 });
 
