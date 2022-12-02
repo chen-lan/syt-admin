@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Badge, Button, Card, Descriptions } from "antd";
+import { Button, Card, Descriptions } from "antd";
 import { reqGetHospitalDetail } from "@/api/hospital/hospitalList";
 import { IHospitalDetail } from "@/api/hospital/hospitalList/model/hospitalListType";
 
