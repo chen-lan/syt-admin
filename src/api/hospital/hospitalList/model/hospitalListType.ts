@@ -80,3 +80,45 @@ export interface IHospitalDetail {
 		bookingRule: null;
 	};
 }
+
+// 获取医院的所有科室
+
+export interface IhospitalDepartment {
+	depcode: string;
+	depname: string;
+	children: IhospitalDepartment[];
+	disabled?: boolean;
+}
+
+export type IhospitalDepartments = IhospitalDepartment[];
+
+// 排班规则接口类型
+export interface IhospitalScheduleRuleList {
+	workDate: string;
+	dayOfWeek: string;
+	docCount: number;
+	reservedNumber: number;
+	availableNumber: number;
+}
+
+export type IbookingScheduleList = IhospitalScheduleRuleList[];
+
+export interface IhospitalScheduleRule {
+	total: number;
+	bookingScheduleList: IbookingScheduleList;
+	baseMap: {
+		hosname: string;
+	};
+}
+
+// 排班日期的排班详情列表接口类型
+export interface IScheduleDetailList {
+	id: string;
+	title: string;
+	skill: string;
+	workDate: string;
+	reservedNumber: number;
+	availableNumber: number;
+	amount: number;
+}
+export type IScheduleDetailLists = IScheduleDetailList[];
